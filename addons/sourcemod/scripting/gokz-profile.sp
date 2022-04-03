@@ -295,8 +295,8 @@ int GetAvailableTagTypeOrDefault(int client)
 
 void RegisterCommands()
 {
-	RegConsoleCmd("sm_profile", CommandProfile, "[KZ] Show the profile of a player. Usage: !profile <player>");
-	RegConsoleCmd("sm_p", CommandProfile, "[KZ] Show the profile of a player. Usage: !p <player>");
+	RegConsoleCmd("sm_gprofile", CommandProfile, "[KZ] Show the profile of a player. Usage: !profile <player>");
+	RegConsoleCmd("sm_gp", CommandProfile, "[KZ] Show the profile of a player. Usage: !p <player>");
 	RegConsoleCmd("sm_profileoptions", CommandProfileOptions, "[KZ] Show the profile options.");
 	RegConsoleCmd("sm_pfo", CommandProfileOptions, "[KZ] Show the profile options.");
 	RegConsoleCmd("sm_ranks", CommandRanks, "[KZ] Show all the available ranks.");
