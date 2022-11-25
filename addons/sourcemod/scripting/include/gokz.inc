@@ -40,6 +40,7 @@ enum ObsMode
 #define PI 3.14159265359
 #define SPEED_NORMAL 250.0
 #define SPEED_NO_WEAPON 260.0
+#define IGNORE_JUMP_TIME 0.2 
 stock float PLAYER_MINS[3] = {-16.0, -16.0, 0.0};
 stock float PLAYER_MAXS[3] = {16.0, 16.0, 72.0};
 stock float PLAYER_MAXS_DUCKED[3] = {16.0, 16.0, 54.0};
@@ -668,6 +669,17 @@ stock void GetCurrentMapDisplayName(char[] buffer, int maxlength)
 	GetCurrentMap(map, sizeof(map));
 	GetMapDisplayName(map, map, sizeof(map));
 	String_ToLower(map, buffer, maxlength);
+}
+
+/**
+ * Gets the current map's file size.
+ */
+stock int GetCurrentMapFileSize()
+{
+	char mapBuffer[PLATFORM_MAX_PATH];
+	GetCurrentMap(mapBuffer, sizeof(mapBuffer));
+	Format(mapBuffer, sizeof(mapBuffer), "maps/%s.bsp", mapBuffer);
+	return FileSize(mapBuffer);
 }
 
 /**
